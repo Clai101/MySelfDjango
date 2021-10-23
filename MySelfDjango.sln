@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "MySelfDjango", "MySelfDjango\MySelfDjango.pyproj", "{1364A2FB-3F00-43B9-BD6A-365DB7DADE34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1364A2FB-3F00-43B9-BD6A-365DB7DADE34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1364A2FB-3F00-43B9-BD6A-365DB7DADE34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1364A2FB-3F00-43B9-BD6A-365DB7DADE34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1364A2FB-3F00-43B9-BD6A-365DB7DADE34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A41CFACE-3138-458B-82DF-7E658453AB39}
+	EndGlobalSection
+EndGlobal
