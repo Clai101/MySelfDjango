@@ -3,6 +3,7 @@ import json, requests
 
 def get_in_json():
     dictionary = take_html()
+    print(dictionary)
     return dictionary
 
 def take_html():
@@ -26,6 +27,6 @@ def parsin(soup):
         discription = article.find("p", class_="synopsis").text.strip()
         img = article.find("figure", class_="article-lead-image-wrap").get("data-original")
         link =  article.get("href").strip()
-        date = article.find("time", class_="published-date relative-date").get("data-published-date")
+        date = article.find("time").get("data-published-date")
         dictionary += [{"title": title, "autor": another_information, "discription": discription, "link": link, "img": img, "date": date, "orign": "www.space.com"}]
     return(dictionary)

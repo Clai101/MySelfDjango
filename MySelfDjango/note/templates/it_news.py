@@ -2,21 +2,10 @@ from bs4 import BeautifulSoup
 import json, requests
 from note.models import News
 
-def get_in_json(comand):
+def get_in_json():
     dictionary = take_html()
-    di_new = []
-    have_seen = News.objects.all()
-
-    for i in dictionary:
-        b = News(title=dictionary["title"], desription=dictionary["discription"], another_information=["autor"], imege=dictionary["img"], date=dictionary["date"], link=dictionary["link"], orign=dictionary["orign"])
-        b.save()
-        if not i in have_seen:
-            di_new += [i]
-
-    have_seen = dictionary
-    have_seen = have_seen[:20*9]
-
-    return di_new
+    print(dictionary)
+    return dictionary
     
 
 def last_json():

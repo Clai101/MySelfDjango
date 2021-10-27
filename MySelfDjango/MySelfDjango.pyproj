@@ -12,7 +12,7 @@
     <ProjectGuid>1364a2fb-3f00-43b9-bd6a-365db7dade34</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>it_news.py</StartupFile>
+    <StartupFile>note\templates\it_news.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -37,7 +37,7 @@
     <Compile Include="app\views.py" />
     <Compile Include="app\__init__.py" />
     <Compile Include="app\migrations\__init__.py" />
-    <Compile Include="it_news.py">
+    <Compile Include="note\templates\it_news.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="manage.py" />
@@ -45,7 +45,7 @@
     <Compile Include="MySelfDjango\settings.py" />
     <Compile Include="MySelfDjango\urls.py" />
     <Compile Include="MySelfDjango\wsgi.py" />
-    <Compile Include="news_parsing.py">
+    <Compile Include="note\templates\news_parsing.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="note\admin.py" />
@@ -53,6 +53,9 @@
     <Compile Include="note\migrations\__init__.py" />
     <Compile Include="note\models.py" />
     <Compile Include="note\tests.py" />
+    <Compile Include="note\urls_note.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="note\views.py" />
     <Compile Include="note\__init__.py" />
   </ItemGroup>
@@ -76,7 +79,6 @@
   <ItemGroup>
     <Content Include="note\templates\note\WebPage1_pattern.html" />
     <Content Include="note\__pycache__\__init__.cpython-37.pyc" />
-    <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
     <Content Include="app\static\app\content\bootstrap.min.css" />
@@ -106,11 +108,6 @@
     <Content Include="app\templates\app\layout.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="readme.html">
-      <SubType>WebBrowser</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="..\..\ПрактикаDjango\ПрактикаDjango\For_django\">
