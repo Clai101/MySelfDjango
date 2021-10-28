@@ -395,30 +395,35 @@
                 <div class="featured">
                     <article id="post-101380" class="group post post-101380 type-post status-publish format-standard has-post-thumbnail hentry category-china category-news tag-10721 tag-7466 tag-10713">
 
-
+                    {%for news in last_news%}
                         <div class="post-inner post-hover" style="padding: 10px 10px 5px 10px;">
                             <div class="post-descr">
                                 <span class="post-author-name">
-                                    <a href="https://thealphacentauri.net/author/9814/" class="author-av"><span>{# Автор #}</span></a>								<!--<span class="post-date" style=""></span>--> ·
-                                    <span class="post-date"><time class="timeago" datetime="2021-10-19T20:22:02+00:00">{# Дата #}</time></span>
+                                    <a class="author-av">
+                                        <span>
+                                            {{news.autor}}
+                                        </span>
+                                    </a>
+                                    <span class="post-date"><time class="timeago" datetime="2021-10-19T20:22:02+00:00">{{news.date}}</time></span>
                                 </span>
                                 <h1 class="post-title">
-                                    <a href="https://thealphacentauri.net/101380-radioteleskop-fast-zaregistriroval-1652-bystryh-radiovspleska-ot-odnogo-istochnika/?alt_title" rel="bookmark" style="" title="{# Название #}" class="editorial">{# Название #}</a>
+                                    <a href="https://thealphacentauri.net/101380-radioteleskop-fast-zaregistriroval-1652-bystryh-radiovspleska-ot-odnogo-istochnika/?alt_title" rel="bookmark" style="" title={{news.title}} class="editorial">{{ news.title }}</a>
                                 </h1><!--/.post-title-->
                                 <div class="post-meta group">
-                                    <span class="post-category"><a href="https://thealphacentauri.net/news/" rel="category tag">{# Источник #}}</a></span>
+                                    <span class="post-category">
+                                        <a href="{{news.orign}}" rel="categorytag"> {{news.orign}} </a></span>
                                 </div><!--/.post-meta-->
                                 <p>
-                                    {# описание #}
+                                    {{news.discription}}
                                 </p>
                             </div>
                             <div class="post-thumbnail" style="">
-                                <a href="https://thealphacentauri.net/101380-radioteleskop-fast-zaregistriroval-1652-bystryh-radiovspleska-ot-odnogo-istochnika/?alt_title" title="{# Название #}">
+                                <a href={{news.link}} title={{news.title}}>
                                     <img width="1920" height="1080"  src="C:\Users\Matvei\Pictures\Screenshots\Screenshot (50).png" data-src="https://cdn.thealphacentauri.net/wp-content/uploads/2021/10/t9uannJ-Imgur.jpg?x67073" class="attachment-post-thumbnail size-post-thumbnail wp-post-image lazy" alt="" loading="lazy" data-srcset="https://cdn.thealphacentauri.net/wp-content/uploads/2021/10/t9uannJ-Imgur.jpg?x67073 1920w, https://cdn.thealphacentauri.net/wp-content/uploads/2021/10/t9uannJ-Imgur-1536x864.jpg?x67073 1536w, https://cdn.thealphacentauri.net/wp-content/uploads/2021/10/t9uannJ-Imgur-720x405.jpg?x67073 720w" data-sizes="(max-width: 1920px) 100vw, 1920px" />
                                 </a>
                             </div><!--/.post-thumbnail-->
                         </div><!--/.post-inner-->
-
+                    {%endfor%}
 
                     </article><!--/.post-->
                 </div>

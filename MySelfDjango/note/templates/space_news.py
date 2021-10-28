@@ -1,10 +1,21 @@
 from bs4 import BeautifulSoup
 import json, requests
+from functools  import reduce
 
 def get_in_json():
     dictionary = take_html()
-    print(dictionary)
     return dictionary
+
+def make_id(date):
+    date = date.replace(", ",".").replace(":",".")
+    date = date.split(".")
+    date = list(map(int, date))
+    consts = [1,1,60,24,30,12]
+    id = 0
+    for i in date:
+        id += i*reduce(lambda x,y: x*y, consts)
+        consts = consts[:-1]
+    return id
 
 def take_html():
     dictionary = []
@@ -27,6 +38,7 @@ def parsin(soup):
         discription = article.find("p", class_="synopsis").text.strip()
         img = article.find("figure", class_="article-lead-image-wrap").get("data-original")
         link =  article.get("href").strip()
-        date = article.find("time").get("data-published-date")
-        dictionary += [{"title": title, "autor": another_information, "discription": discription, "link": link, "img": img, "date": date, "orign": "www.space.com"}]
+        date = article.find("time").get("data-published-date").replace("Z",'').replace("T",', ').replace("-",'.')[:-3]
+        dictionary += [{"title": title, "autor": another_information, "discription": discription, "link": link, "img": img, "date": date, "orign": "www.space.com", "id": make_id(date)}]
     return(dictionary)
+
