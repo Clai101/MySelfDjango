@@ -4,7 +4,6 @@ from functools  import reduce
 
 def it_get_in_json():
     dictionary = it_take_html()
-    print(dictionary)
     return dictionary
 
 def it_take_html():
