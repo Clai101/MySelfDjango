@@ -36,7 +36,10 @@ def parsin(soup):
         title = article.find("h3", class_ = "article-name").text.strip()
         another_information = article.find("p", class_="byline").text.strip()[4:]
         discription = article.find("p", class_="synopsis").text.strip()
-        img = article.find("figure", class_="article-lead-image-wrap").get("data-original")
+        try:
+            img = article.find("figure", class_="article-lead-image-wrap").get("data-original")
+        except:
+            img = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Alpha%2C_Beta_and_Proxima_Centauri_%281%29.jpg/1200px-Alpha%2C_Beta_and_Proxima_Centauri_%281%29.jpg"
         link =  article.get("href").strip()
         date = article.find("time").get("data-published-date").replace("Z",'').replace("T",', ').replace("-",'.')[:-3]
         dictionary += [{"title": title, "autor": another_information, "discription": discription, "link": link, "img": img, "date": date, "orign": "www.space.com", "id": make_id(date)}]

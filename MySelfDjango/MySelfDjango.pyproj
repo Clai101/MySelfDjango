@@ -31,10 +31,10 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="note\templates\bin_sort.py">
+    <Compile Include="note\pars_defs\bin_sort.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="note\templates\it_news.py">
+    <Compile Include="note\pars_defs\it_news.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="manage.py" />
@@ -42,7 +42,7 @@
     <Compile Include="MySelfDjango\settings.py" />
     <Compile Include="MySelfDjango\urls.py" />
     <Compile Include="MySelfDjango\wsgi.py" />
-    <Compile Include="note\templates\space_news.py">
+    <Compile Include="note\pars_defs\space_news.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="note\admin.py" />
@@ -60,12 +60,13 @@
     <Folder Include="MySelfDjango\" />
     <Folder Include="note\" />
     <Folder Include="note\migrations\" />
+    <Folder Include="note\pars_defs\" />
     <Folder Include="note\templates\" />
     <Folder Include="note\templates\note\" />
     <Folder Include="note\__pycache__\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="note\templates\note\WebPage1_pattern.html" />
+    <Content Include="note\templates\note\main_news.html" />
     <Content Include="note\__pycache__\__init__.cpython-37.pyc" />
     <Content Include="db.sqlite3" />
   </ItemGroup>

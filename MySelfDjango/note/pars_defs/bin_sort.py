@@ -17,3 +17,4 @@ def heap_sort(nums):
     n = len(nums)
     for i in range(n, -1, -1):
         heapify(nums, n, i)
+    return nums
