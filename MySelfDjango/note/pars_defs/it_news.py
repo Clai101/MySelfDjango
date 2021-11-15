@@ -44,10 +44,17 @@ def it_parsin(soup):
             for i in discriptions:
                 discription += i.text.strip() + "\n"
             another_information = article.find('a', class_="tm-user-info__username").text
+            img = None
             try:
-                img = article.find("img", class_="tm-article-snippet__lead-image").get("src")
+                img = articlefind("img", class_ = "tm-article-snippet__lead-image").get("src")
             except:
-                img = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Alpha%2C_Beta_and_Proxima_Centauri_%281%29.jpg/1200px-Alpha%2C_Beta_and_Proxima_Centauri_%281%29.jpg"
+                try:
+                    img = article.find("div", class_="tm-article-body tm-article-snippet__lead").find("img").get("src")   
+                except:
+                    try:
+                        img = article.find("div", class_="article-formatted-body article-formatted-body_version-1").find("img").get("src")
+                    except:
+                        img = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Alpha%2C_Beta_and_Proxima_Centauri_%281%29.jpg/1200px-Alpha%2C_Beta_and_Proxima_Centauri_%281%29.jpg"
             link =  article.find('a', class_="tm-article-snippet__title-link").get("href").strip()
             date = article.find("time").get("title").replace('-','.')
             dictionary += [{"title": title, "autor": another_information, "discription": discription, "link": link, "img": img, "date": date, "orign": "https://habr.com", "id":it_make_id(date)}]
